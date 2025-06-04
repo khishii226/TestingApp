@@ -1,0 +1,8 @@
+/* Optional: Reset margin/padding for full screen canvas */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #111;
+  font-family: sans-serif;
+}
