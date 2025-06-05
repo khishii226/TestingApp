@@ -141,7 +141,7 @@ const cleanupMemory = () => {
       currentAudioRef.current = audio;
     };
 
-    if (pos.every((v, i) => v === [-1.5, 0.4, -2.1][i])) {
+    if (pos.every((v, i) => v === [-1.5, 0.42, -2.1][i])) {
       playLoopedAudio('/sceneSounds/sparrow.mp3');
     } else if (pos.every((v, i) => v === [0.2, 0.42, 3.2][i])) {
       playLoopedAudio('/sceneSounds/beach.mp3');
@@ -149,7 +149,7 @@ const cleanupMemory = () => {
 
     if (
       (pos.every((v, i) => v === [-3.9, 0.4, 1.55][i])) ||
-      (pos.every((v, i) => v === [-0.5, 0.4, -1.9][i]))
+      (pos.every((v, i) => v === [-0.5, 0.42, -1.9][i]))
     ) {
       setTimeout(() => {
         currentAudioRef.current?.pause();
