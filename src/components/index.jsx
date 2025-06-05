@@ -324,7 +324,7 @@ const cleanupMemory = () => {
             />
           ))}
 
-          {/* {showGardenDialog && (
+          {showGardenDialog && (
             <FloatingDialog position={[-2.5, 0.4, -2.9]} texts="Once upon a time, shoppers roamed the land of aisles — until the magic of the internet changed everything." active t="r" />
           )}
           {showBeachDialog && (
@@ -335,7 +335,7 @@ const cleanupMemory = () => {
           )}
           {showSpDialog && (
             <FloatingDialog position={[-2.2, 0.37, -1.25]} texts="he hehe  he ehe " active t="l"/>
-          )} */}
+          )}
         </Suspense>
       </Canvas>
 
