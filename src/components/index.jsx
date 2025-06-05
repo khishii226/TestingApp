@@ -331,7 +331,7 @@ const cleanupMemory = () => {
             <FloatingDialog position={[0.5, 0.2, 3.15]} texts="Say goodbye to the divide — GHARSEE merges the magic of in-store shopping with the ease of online." active t="r" />
           )}
           {showOfficeDialog && (
-            <FloatingDialog position={[2.43, 0.46, -0.69]} texts="With GHARSEE’s lifelike interface, your favorite stores walk right into your home — why go out when the shop comes to you?" active t="l"/>
+            <FloatingDialog position={[2.65, 0.47, -0.71]} texts="With GHARSEE’s lifelike interface, your favorite stores walk right into your home — why go out when the shop comes to you?" active t="l"/>
           )}
           {showSpDialog && (
             <FloatingDialog position={[-2.2, 0.37, -1.25]} texts="he hehe  he ehe " active t="l"/>
