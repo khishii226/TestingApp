@@ -568,7 +568,11 @@ Excellent planning, organisational, and time management skills.`,
 
 {selected === "Vision" && (
                 <>
-                  <h2><img src="./vision.png" style={{height:"5vh", marginRight: '10px'}}/>OUR VISION</h2>
+                <div style={{display: "flex", alignItems: "cenetr", justifyContent: "center"}}>
+                    <img src="./vision.png" style={{height:"5vh", marginRight: '10px', marginTop: '12px'}}/>
+                    <h2><u>OUR VISION</u></h2>
+                </div>
+              
                   <div style={{
                     marginTop: 20,
                     textAlign: "left",
@@ -603,7 +607,10 @@ GHARSEE envisions a global shift in e-commerce where immersive experiences repla
 
 {selected === "Mission" && (
                 <>
-                  <h2 ><img src="./mission.png" style={{height:"5vh", marginRight: '10px'}}/>OUR MISSION</h2>
+                  <div style={{display: "flex", alignItems: "cenetr", justifyContent: "center"}}>
+                    <img src="./mission.png" style={{height:"5vh", marginRight: '10px', marginTop: '15px'}}/>
+                    <h2><u>OUR MISSION</u></h2>
+                </div>
                   <div style={{
                     marginTop: 20,
                     textAlign: "left",
@@ -641,7 +648,10 @@ GHARSEE is committed to revolutionizing commerce by creating seamless, enriching
               )}
 {selected === "Why Us" && (
                 <>
-                  <h2><img src="./whyus.png" style={{height:"6vh", marginRight: '10px'}}/>Why GHARSEE?</h2>
+                  <div style={{display: "flex", alignItems: "cenetr", justifyContent: "center"}}>
+                    <img src="./whygharsee.png" style={{height:"6vh", marginRight: '10px', marginTop: '8px'}}/>
+                    <h2><u>Why GHARSEE?</u></h2>
+                </div>
                   <div style={{
                     marginTop: 20,
                     textAlign: "left",
