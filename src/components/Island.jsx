@@ -84,7 +84,7 @@ function createRainbowShaderMaterial() {
 }
 
 const Island = forwardRef((props, ref) => {
-  const { scene: gltfScene, animations } = useGLTF('/DayView2.glb');
+  const { scene: gltfScene, animations } = useGLTF('/day.glb');
   const matRef = useRef();
   const mixerRef = useRef();
   const timeRef = useRef(0);
@@ -176,7 +176,7 @@ const Island = forwardRef((props, ref) => {
               thickness: 0.9,
               ior: 1.45,
               transparent: true,
-              opacity: 0.25,
+              opacity: 0.5,
               envMapIntensity: 10.5,
             });
           }

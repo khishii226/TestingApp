@@ -22,6 +22,8 @@ import FloatingBubbleMenu from './FloatingBubbleMenu';
 import Loader from './Loader';
 import FloatingDialog from './FloatingDialog';
 import Logo from './Logo';
+import HouseContent from './HouseContent';
+import TVLogo from './TVLogo';
 
 export default function IslandScene() {
    const clickSound = new Audio('/click.mp3');
@@ -47,9 +49,15 @@ export default function IslandScene() {
   const [sceneKey, setSceneKey] = useState(0);
   
   const [showGardenDialog, setShowGardenDialog] = useState(false);
-  const [showBeachDialog, setShowBeachDialog] = useState(false);
-  const [showOfficeDialog, setShowOfficeDialog] = useState(false);
   const [showSpDialog, setShowSpDialog] = useState(false);
+  const [showWDialog, setShowWDialog] = useState(false);
+  const [showBeachDialog, setShowBeachDialog] = useState(false);
+  const [showBeach2Dialog, setShowBeach2Dialog] = useState(false);
+  const [showBeach3Dialog, setShowBeach3Dialog] = useState(false);
+  const [showBeach4Dialog, setShowBeach4Dialog] = useState(false);
+  const [showOfficeDialog, setShowOfficeDialog] = useState(false);
+  const [showHouse1Dialog, setShowHouse1Dialog] = useState(false);
+  const [showHouse2Dialog, setShowHouse2Dialog] = useState(false);
 
   const towerMarkers = [
   { label: 'House', position: [-1.3, 1.7, 2.15] },
@@ -75,6 +83,12 @@ const cleanupMemory = () => {
     const beachPos = [0.2, 0.42, 3.2];
     const officePos = [1.9, 0.35, -0.5];
     const spPos = [-2.4, 0.42, -1.8];
+    const wPos = [-0.5, 0.42, -1.9];
+    const beach2Pos = [1.5, 0.41, 2.67];
+    const beach3Pos = [2.3, 0.35, 2];
+    const house1Pos = [-1.62, 0.4, 1.3];
+    const house2Pos = [-1.4, 0.3, 0.9];
+    const beach4Pos = [-0.4, 0.35, 3.6];
 
     const gardenTimeout = matchPos(currentMarkerPos, gardenPos)
       ? setTimeout(() => setShowGardenDialog(true), 2000)
@@ -82,6 +96,15 @@ const cleanupMemory = () => {
 
     const beachTimeout = matchPos(currentMarkerPos, beachPos)
       ? setTimeout(() => setShowBeachDialog(true), 2000)
+      : null;
+    const beach2Timeout = matchPos(currentMarkerPos, beach2Pos)
+      ? setTimeout(() => setShowBeach2Dialog(true), 2000)
+      : null;
+    const beach3Timeout = matchPos(currentMarkerPos, beach3Pos)
+      ? setTimeout(() => setShowBeach3Dialog(true), 2000)
+      : null;
+    const beach4Timeout = matchPos(currentMarkerPos, beach4Pos)
+      ? setTimeout(() => setShowBeach4Dialog(true), 2000)
       : null;
 
     const officeTimeout = matchPos(currentMarkerPos, officePos)
@@ -92,16 +115,39 @@ const cleanupMemory = () => {
       ? setTimeout(() => setShowSpDialog(true), 2000)
       : null;
 
+    const wTimeout = matchPos(currentMarkerPos, wPos)
+      ? setTimeout(() => setShowWDialog(true), 2000)
+      : null;
+
+    const house1Timeout = matchPos(currentMarkerPos, house1Pos)
+      ? setTimeout(() => setShowHouse1Dialog(true), 2000)
+      : null;
+    const house2Timeout = matchPos(currentMarkerPos, house2Pos)
+      ? setTimeout(() => setShowHouse2Dialog(true), 2000)
+      : null;
+
     if (!matchPos(currentMarkerPos, gardenPos)) setShowGardenDialog(false);
     if (!matchPos(currentMarkerPos, beachPos)) setShowBeachDialog(false);
+    if (!matchPos(currentMarkerPos, beach2Pos)) setShowBeach2Dialog(false);
+    if (!matchPos(currentMarkerPos, beach3Pos)) setShowBeach3Dialog(false);
+    if (!matchPos(currentMarkerPos, beach4Pos)) setShowBeach4Dialog(false);
     if (!matchPos(currentMarkerPos, officePos)) setShowOfficeDialog(false);
     if (!matchPos(currentMarkerPos, spPos)) setShowSpDialog(false);
+    if (!matchPos(currentMarkerPos, wPos)) setShowWDialog(false);
+    if (!matchPos(currentMarkerPos, house1Pos)) setShowHouse1Dialog(false);
+    if (!matchPos(currentMarkerPos, house2Pos)) setShowHouse2Dialog(false);
 
     return () => {
       clearTimeout(gardenTimeout);
       clearTimeout(beachTimeout);
+      clearTimeout(beach2Timeout);
+      clearTimeout(beach3Timeout);
+      clearTimeout(beach4Timeout);
       clearTimeout(officeTimeout);
       clearTimeout(spTimeout);
+      clearTimeout(wTimeout);
+      clearTimeout(house1Timeout);
+      clearTimeout(house2Timeout);
     };
   }, [currentMarkerPos]);
 
@@ -199,8 +245,14 @@ const cleanupMemory = () => {
     currentAudioRef.current = null;
     setShowGardenDialog(false);
     setShowBeachDialog(false);
+    setShowBeach2Dialog(false);
+    setShowBeach3Dialog(false);
+    setShowBeach4Dialog(false);
     setShowOfficeDialog(false);
     setShowSpDialog(false);
+    setShowWDialog(false);
+    setShowHouse1Dialog(false);
+    setShowHouse2Dialog(false);
     setFlyTarget({
       targetPos: [0.1, 3, 1.4],
       lookAt: [-0.7, 1.5, -0.5], // [-0.7, 2.2, -0.5]
@@ -258,9 +310,18 @@ const cleanupMemory = () => {
           setCurrentSceneLabel(null);
           setCurrentMarkerPos(null);
           setYawRestrictEnabled(false);
+
           setShowGardenDialog(false);
           setShowBeachDialog(false);
+          setShowBeach2Dialog(false);
+          setShowBeach3Dialog(false);
+          setShowBeach4Dialog(false);
           setShowOfficeDialog(false);
+          setShowSpDialog(false);
+          setShowWDialog(false);
+          setShowHouse1Dialog(false);
+          setShowHouse2Dialog(false);
+
           setShowToggleBtn(true);
           currentAudioRef.current?.pause();
           currentAudioRef.current = null;
@@ -280,8 +341,8 @@ const cleanupMemory = () => {
 
         style={{ zIndex: 0 }}
       >
-      {/* <SceneMarkerWithLine position={[3, 0.25, -0.97]} />
-      <SceneMarkerWithLine position={[2.85, 0.26, -0.7]} /> */}
+      {/* <SceneMarkerWithLine position={[-0.4, 0.42, 3.6]} />
+      <SceneMarkerWithLine position={[-0.1, 0.25, 3.2]} /> */}
 
         <BackgroundManager isDay={isDay} />
         <SkyAndLights isDay={isDay} />
@@ -325,17 +386,50 @@ const cleanupMemory = () => {
           ))}
 
           {showGardenDialog && (
-            <FloatingDialog position={[-2.5, 0.4, -2.9]} texts="Once upon a time, shoppers roamed the land of aisles — until the magic of the internet changed everything." active t="r" />
-          )}
-          {showBeachDialog && (
-            <FloatingDialog position={[0.5, 0.2, 3.15]} texts="Say goodbye to the divide — GHARSEE merges the magic of in-store shopping with the ease of online." active t="r" />
-          )}
-          {showOfficeDialog && (
-            <FloatingDialog position={[2.65, 0.47, -0.71]} texts="With GHARSEE’s lifelike interface, your favorite stores walk right into your home — why go out when the shop comes to you?" active t="l"/>
+            <FloatingDialog position={[-2.5, 0.4, -2.9]} texts="My favourite flower? The one I plant while laughing with mommy....not waiting in store lines" active t="r" />
           )}
           {showSpDialog && (
-            <FloatingDialog position={[-2.2, 0.37, -1.25]} texts="he hehe  he ehe " active t="l"/>
+            <FloatingDialog position={[-2.2, 0.37, -1.25]} texts="GHARSEE handles errands so we can handle what matters: planting dreams alongside our little ones." active t="l"/>
           )}
+          {showWDialog && (
+            <FloatingDialog position={[-0.45, 0.36, -2.4]} texts="More blooms, fewer receipts--spend evenings tending love instead of stores." active t="r"/>
+          )}
+
+
+          {showBeachDialog && (
+            <>
+            <FloatingDialog position={[0.54, 0.2, 3.18]} texts="GHARSEE handles the hustle so we can build sandcastles instead of schedules" active t="r" />
+            <FloatingDialog position={[0.54, 0.12, 3.09]} texts="GHARSEE magic means my parents stay longer! Our sandcastle has towers AND a treasure chest now!" active t="r" />
+            <FloatingDialog position={[0.54, 0.12, 3.4]} texts="I dig holes, they laugh--GHARSEE made our day extra sandy and silly!" active t="l" />
+            </>
+          )}
+          {showBeach2Dialog && (
+            <FloatingDialog position={[2.5, 0.3, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="l"/>
+          )}
+          {showBeach3Dialog && (
+            <>
+            <FloatingDialog position={[3, 0.36, 2.19]} texts="GHARSEE's VR shopping = more sets, serves, and sand-sprints before sunset." active t="r"/>
+            <FloatingDialog position={[3, 0.38, 2.98]} texts="Why waste energy on errands when i spike into joy? Thank you, GHARSEE efficiency!" active t="l"/>
+            </>
+          )}
+          {showBeach4Dialog && (
+             <FloatingDialog position={[-0.21, 0.26, 3.42]} texts="Reclined on a beach chair, not a rush in sight. My GHARSEE did the heavy lighting." active t="l"/>
+          )}
+
+          {showOfficeDialog && (
+            <FloatingDialog position={[2.73, 0.47, -0.756]} texts="Efficient convenient shopping by dat, hoddy-hero by night--MY GHARSEE fuels both with zero mall marathons." active t="l" extra='yes'/>
+          )}
+
+          {showHouse1Dialog && (
+            <HouseContent position={[-1.5, 0.25, 0.8]} texts="My couch is my command center. Why leave when my GHARSEE brings the mall to my fingertips?" />
+          )}
+          {showHouse2Dialog && (
+            <>
+            <TVLogo />
+            <HouseContent position={[-1.527, 0.229, 0.7]} texts="Shop with GHARSEE: Where 'Errands' become 'Extra Moments' --all from your favourite spot at home." />
+            </>
+          )}
+
         </Suspense>
       </Canvas>
 
@@ -352,8 +446,14 @@ const cleanupMemory = () => {
               setYawRestrictEnabled(false);
               setShowGardenDialog(false);
               setShowBeachDialog(false);
+              setShowBeach2Dialog(false);
+              setShowBeach3Dialog(false);
+              setShowBeach4Dialog(false);
               setShowOfficeDialog(false);
               setShowSpDialog(false);
+              setShowWDialog(false);
+              setShowHouse1Dialog(false);
+              setShowHouse2Dialog(false);
             }}
           />
         </>

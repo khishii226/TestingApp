@@ -1,7 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faInstagram,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+import { faSquareWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaUserTie, FaBars, FaSearch, FaBullseye, FaUsers, FaHandPointRight } from "react-icons/fa";
+import { faUsersViewfinder } from '@fortawesome/free-solid-svg-icons';
 
 export default function FloatingBubbleMenu() {
   const [expanded, setExpanded] = useState(false);
@@ -9,15 +17,33 @@ export default function FloatingBubbleMenu() {
   const [careerDetail, setCareerDetail] = useState(null);
   const bubbleRef = useRef(null);
   const videoRef = useRef(null);
+const styles = {
+    linkedin: { color: "#0077B5", fontSize: 32, textShadow: "10px 5px 6px black", },         
+    instagram: { color: "#E1306C", fontSize: 32 },        
+    whatsapp: { color: "#25D366", fontSize: 32 },         
+    whatsappBusiness: { color: "#075E54", fontSize: 32 }, 
+  };
+  const videos = [ 
+  "./v1.mp4",
+  "./v2.mp4",
+  "./v3.mp4",
+];
 
-  const videos = [
-    "/v1.mp4",
-    "/v2.mp4",
-    "/v3.mp4",
-  ];
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
-  const menuOptions = ["Careers", "Contact", "Map", "Connect", "Guide"];
+  const menuOptions = ["Careers", "Contact", "Map", "Connect", "Guide", "Vision", "Mission", "Why Us"];
+const iconMap = {
+  Careers: <FaUserTie style={{ marginRight: 8, color: "#7F8CFF" }} />,
+  Contact: <FaEnvelope style={{ marginRight: 8, color: "#3CBC8D" }} />,
+  Map: <FaMapMarkerAlt style={{ marginRight: 8, color: "#EB6E6E" }} />,
+  Connect: <FaPhone style={{ marginRight: 8, color: "#4E9EF7" }} />,
+  Guide: <FontAwesomeIcon icon={faUsersViewfinder} style={{ marginRight: 8, color: "#A29BFE" }} />,
+  Vision: <FaSearch style={{ marginRight: 8, color: "#F8C471" }} />,
+  Mission: <FaBullseye style={{ marginRight: 8, color: "#E74C3C" }} />,
+  "Why Us": <FaUsers style={{ marginRight: 8, color: "#58D68D" }} />,
+};
+
+
 
   const careerDetailsData = {
     "Computer Engineer": `We are hiring B.TECH Computer Engineers to join our team. You will work alongside other Computer Engineers and report directly to the Project Manager.Your roles and responsibilities will include Evaluating Business processes, anticipating requirements, uncovering areas for improvement, and developing and implementing solutions. To succeed in this role the individual should have a natural analytical way of thinking and be able to explain difficult concepts to non-technical users.`,
@@ -37,7 +63,7 @@ Excellent planning, organisational, and time management skills.`,
   const contactInfo = {
     Phone: "0265-3548456",
     Email: "info@gharsee.com",
-    Address: "SF-226, Siddharth Annexe Near Canal, Sama Savli Road, Vadodara-390024",
+    Address: "SF-226, SIDDHARTH ANNEXE-1, Landmark: Macdonalds, Sama-Savli Rd, near Canal Road, New Sama, Vadodara, Gujarat 390024",
   };
 
   useEffect(() => {
@@ -103,7 +129,7 @@ Excellent planning, organisational, and time management skills.`,
         }}
         whileHover={{ scale: 1.1 }}
       >
-        <div className="flower-icon">☰</div>
+        <div className="flower-icon"><FaBars style={{ color: "#333" }} /></div>
 
         <AnimatePresence>
           {expanded && (
@@ -131,28 +157,32 @@ Excellent planning, organisational, and time management skills.`,
               }}
             >
               {menuOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => {
-                    setSelected(option);
-                    setExpanded(false);
-                    setCareerDetail(null);
-                  }}
-                  style={{
-                    background: "rgba(255,255,255,0.25)",
-                    border: "none",
-                    padding: "8px 14px",
-                    borderRadius: 10,
-                    color: "white",
-                    fontWeight: "600",
-                    cursor: "pointer",
-                    whiteSpace: "nowrap",
-                    fontSize: 14,
-                  }}
-                >
-                  {option}
-                </button>
-              ))}
+  <button
+    key={option}
+    onClick={() => {
+      setSelected(option);
+      setExpanded(false);
+      setCareerDetail(null);
+    }}
+    style={{
+      background: "rgba(255,255,255,0.25)",
+      border: "none",
+      padding: "8px 14px",
+      borderRadius: 10,
+      color: "white",
+      fontWeight: "600",
+      cursor: "pointer",
+      whiteSpace: "nowrap",
+      fontSize: 14,
+      display: "flex",
+      alignItems: "center",
+    }}
+  >
+    {iconMap[option]} {/* Insert icon */}
+    {option}
+  </button>
+))}
+
             </motion.div>
           )}
         </AnimatePresence>
@@ -192,7 +222,7 @@ Excellent planning, organisational, and time management skills.`,
               exit={{ scale: 0.85, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
               style={{
-                background: "rgba(255,255,255,0.15)",
+                // background: "rgba(255,255,255,0.15)",
                 backdropFilter: "blur(12px)",
                 padding: 30,
                 borderRadius: 20,
@@ -218,7 +248,7 @@ Excellent planning, organisational, and time management skills.`,
                         textAlign: "left",
                         boxShadow: "0 0 10px rgba(0,0,0,0.1)",
                       }}>
-                        <h3>{career}</h3>
+                        <h3 style={{color: "#2b0a43"}}><FaUserTie style={{ color: "#54187f", marginRight: "8px" }}/>{career}</h3>
                         <button
                           onClick={() => setCareerDetail(career)}
                           style={{
@@ -226,8 +256,7 @@ Excellent planning, organisational, and time management skills.`,
                             border: "none",
                             padding: "8px 16px",
                             borderRadius: 10,
-                            // color: "white",
-                            fontWeight: "600",
+                            color: "white",
                             cursor: "pointer",
                             marginTop: 6,
                             fontSize: 14,
@@ -243,7 +272,7 @@ Excellent planning, organisational, and time management skills.`,
                     style={{
                       marginTop: 30,
                       background: "#ffffff22",
-                      // color: "white",
+                      color: "white",
                       border: "none",
                       padding: "12px 20px",
                       borderRadius: 12,
@@ -276,7 +305,7 @@ Excellent planning, organisational, and time management skills.`,
                     style={{
                       marginTop: 30,
                       background: "#ffffff22",
-                      // color: "white",
+                      color: "white",
                       border: "none",
                       padding: "12px 20px",
                       borderRadius: 12,
@@ -301,16 +330,25 @@ Excellent planning, organisational, and time management skills.`,
                     fontSize: 16,
                     lineHeight: "1.5em",
                   }}>
-                    <p><strong>Phone:</strong> {contactInfo.Phone}</p>
-                    <p><strong>Email:</strong> {contactInfo.Email}</p>
-                    <p><strong>Address:</strong> {contactInfo.Address}</p>
+                    <p>
+  <FaPhone style={{ color: "#228B22", marginRight: "8px" }} />
+  {contactInfo.Phone}
+</p>
+<p>
+  <FaEnvelope style={{ color: "blue", marginRight: "8px" }} />
+  {contactInfo.Email}
+</p>
+<p>
+  <FaMapMarkerAlt style={{ color: "red", marginRight: "8px" }} />
+  {contactInfo.Address}
+</p>
                   </div>
                   <button
                     onClick={() => setSelected(null)}
                     style={{
                       marginTop: 30,
                       background: "#ffffff22",
-                      // color: "white",
+                      color: "white",
                       border: "none",
                       padding: "12px 20px",
                       borderRadius: 12,
@@ -353,7 +391,7 @@ Excellent planning, organisational, and time management skills.`,
                     style={{
                       marginTop: 30,
                       background: "#ffffff22",
-                      // color: "white",
+                      color: "white",
                       border: "none",
                       padding: "12px 20px",
                       borderRadius: 12,
@@ -378,18 +416,41 @@ Excellent planning, organisational, and time management skills.`,
   marginTop: 20,
   flexWrap: "wrap",
 }}>
-  <a href="https://www.linkedin.com/company/gharsee/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style={{ width: 32, height: 32, filter: "invert(1)" }} />
-  </a>
-  <a href="https://www.instagram.com/gharsee_tech/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noopener noreferrer" title="Instagram">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" style={{ width: 32, height: 32, filter: "invert(1)" }} />
-  </a>
-  <a href="https://whatsapp.com/channel/0029Va9Z23u2ER6qyWTlu91J" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" style={{ width: 32, height: 32, filter: "invert(1)" }} />
-  </a>
-  <a href="https://wa.me/message/YOURBUSINESSID" target="_blank" rel="noopener noreferrer" title="WhatsApp Business">
-    <img src="./wpb.svg" alt="WhatsApp Business" style={{ width: 32, height: 32, filter: "invert(1)"}} />
-  </a>
+      <a
+        href="https://www.linkedin.com/company/gharsee/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="LinkedIn"
+      >
+        <FontAwesomeIcon icon={faLinkedin} style={styles.linkedin} />
+      </a>
+
+      <a
+        href="https://www.instagram.com/gharsee_tech/?igshid=YmMyMTA2M2Y%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Instagram"
+      >
+        <FontAwesomeIcon icon={faInstagram} style={styles.instagram} />
+      </a>
+
+      <a
+        href="https://whatsapp.com/channel/0029Va9Z23u2ER6qyWTlu91J"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="WhatsApp"
+      >
+        <FontAwesomeIcon icon={faWhatsapp} style={styles.whatsapp} />
+      </a>
+
+      <a
+        href="https://wa.me/912653548456"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="WhatsApp Business"
+      >
+        <FontAwesomeIcon icon={faSquareWhatsapp} style={styles.whatsappBusiness} />
+      </a>
 </div>
 <button
   onClick={() => setSelected(null)}
@@ -397,6 +458,7 @@ Excellent planning, organisational, and time management skills.`,
     marginTop: 30,
     background: "#ffffff22",
     border: "none",
+    color:"white",
     padding: "12px 20px",
     borderRadius: 12,
     cursor: "pointer",
@@ -496,6 +558,7 @@ Excellent planning, organisational, and time management skills.`,
         fontWeight: "600",
         fontSize: 16,
         width: "100%",
+        color: "white",
       }}
     >
       Close
@@ -503,9 +566,114 @@ Excellent planning, organisational, and time management skills.`,
   </>
 )}
 
+{selected === "Vision" && (
+                <>
+                  <h2><img src="./vision.png" style={{height:"5vh", marginRight: '10px'}}/>OUR VISION</h2>
+                  <div style={{
+                    marginTop: 20,
+                    textAlign: "left",
+                    fontSize: 16,
+                    lineHeight: "1.5em",
+                  }}>
+                    <p>To redefine the future of shopping by seamlessly blending physical and digital worlds.
+<br/><br/>
+<FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} />
+GHARSEE envisions a global shift in e-commerce where immersive experiences replace passive browsing. By pioneering intuitive 3D interfaces and mobile VR technology, we aim to create a universe where users don’t just "see" products—they explore them in lifelike environments, revolutionizing how humanity shops forever.</p>
+                    
+                  </div>
+                  <button
+                    onClick={() => setSelected(null)}
+                    style={{
+                      marginTop: 30,
+                      background: "#ffffff22",
+                      color: "white",
+                      border: "none",
+                      padding: "12px 20px",
+                      borderRadius: 12,
+                      cursor: "pointer",
+                      fontWeight: "600",
+                      fontSize: 16,
+                      width: "100%",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
 
-
-
+{selected === "Mission" && (
+                <>
+                  <h2 ><img src="./mission.png" style={{height:"5vh", marginRight: '10px'}}/>OUR MISSION</h2>
+                  <div style={{
+                    marginTop: 20,
+                    textAlign: "left",
+                    fontSize: 16,
+                    lineHeight: "1.5em",
+                  }}>
+                    <p>To elevate how the world shops by bridging imagination and reality through next-gen 3D and VR technology.
+<br/>
+GHARSEE is committed to revolutionizing commerce by creating seamless, enriching shopping journeys that adapt to every user’s lifestyle:
+<br/><br/>
+<FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Next-Gen Access: Whether you’re browsing a product in interactive 3D on your screen or diving into full immersion with a mobile VR headset, GHARSEE ensures cutting-edge technology meets intuitive usability.
+<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} />Empathetic Design: We craft experiences that prioritize human connection—letting shoppers explore virtual showrooms like real stores, interact socially in shared spaces, and personalize purchases through AI-powered insights.
+<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Boundless Discovery: From inspecting hyper-realistic 3D textures on your phone to walking through VR-enabled retail worlds, we transform shopping into an adventure that’s engaging, efficient, and endlessly inspiring.
+</p>
+                    
+                  </div>
+                  <button
+                    onClick={() => setSelected(null)}
+                    style={{
+                      marginTop: 30,
+                      background: "#ffffff22",
+                      color: "white",
+                      border: "none",
+                      padding: "12px 20px",
+                      borderRadius: 12,
+                      cursor: "pointer",
+                      fontWeight: "600",
+                      fontSize: 16,
+                      width: "100%",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
+{selected === "Why Us" && (
+                <>
+                  <h2><img src="./whyus.png" style={{height:"6vh", marginRight: '10px'}}/>Why GHARSEE?</h2>
+                  <div style={{
+                    marginTop: 20,
+                    textAlign: "left",
+                    fontSize: 16,
+                    lineHeight: "1.5em",
+                  }}>
+                    <p>Shopping isn’t just about what you buy—it’s about how it makes you feel.
+<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Dual immersion: Explore products in rich 3D detail on any screen or step inside a VR world with your headset for the ultimate in-store experience from anywhere.
+<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Feel the product, not the distance: Touchless yet tactile—see fabrics ripple, hear shoes click against virtual floors, or place furniture in your living room’s exact dimensions before buying.
+Social & smart shopping: Invite friends to join VR tours of stores, crowdsource opinions on outfits in real time, or let AI guide you to products that match your style and needs.
+<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> No learning curve, just wow-factor: Our platform is built for everyone—whether you’re a tech enthusiast craving headsets or someone who prefers classic 3D browsing, GHARSEE meets you where you are.</p>
+                    
+                  </div>
+                  <button
+                    onClick={() => setSelected(null)}
+                    style={{
+                      marginTop: 30,
+                      background: "#ffffff22",
+                      color: "white",
+                      border: "none",
+                      padding: "12px 20px",
+                      borderRadius: 12,
+                      cursor: "pointer",
+                      fontWeight: "600",
+                      fontSize: 16,
+                      width: "100%",
+                    }}
+                  >
+                    Close
+                  </button>
+                </>
+              )}
             </motion.div>
           </motion.div>
         )}
@@ -538,8 +706,8 @@ Excellent planning, organisational, and time management skills.`,
           font-weight: bold;
         }
 
-        h1, h2, h3, p {
-          color: black;
+        h1,h2, h3, p {
+          color: white;
         }
 
         @media (max-width: 600px) {

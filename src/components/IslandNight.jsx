@@ -85,7 +85,8 @@ function createRainbowShaderMaterial() {
 
 const Island = forwardRef((props, ref) => {
   // Use useGLTF from drei - handles DRACO automatically
-  const { scene: gltfScene, animations } = useGLTF('/NightView3.glb');
+  const { scene: gltfScene, animations } = useGLTF('/night.glb');
+
 
   const matRef = useRef();
   const mixerRef = useRef();
@@ -188,7 +189,7 @@ const Island = forwardRef((props, ref) => {
               thickness: 0.9,
               ior: 1.45,
               transparent: true,
-              opacity: 0.25,
+              opacity: 0.5,
               envMapIntensity: 10.5,
             });
           }

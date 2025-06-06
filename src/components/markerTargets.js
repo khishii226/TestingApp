@@ -78,28 +78,34 @@ const markerTargets = {
 
   Beach: [
     {
-      label: 'BeachMarker2',
+      label: 'BeachMarker1',
       position: [0.2, 0.42, 3.2],
       targetPos: [0.2, 0.31, 3.2],
       lookAt: [0.5, 0.1, 3.2],
     },
     {
-      label: 'BeachMarker3',
+      label: 'BeachMarker2',
       position: [1.5, 0.41, 2.67],
       targetPos: [1.5, 0.25, 2.67],
-      lookAt: [1, 0.25, 2.2],
+      lookAt: [2, 0.25, 2.5],
+    },
+    {
+      label: 'BeachMarker3',
+      position: [2.3, 0.35, 2],
+      targetPos: [2.3, 0.25, 2],
+      lookAt: [3, 0.25, 2.5],
     },
     {
       label: 'BeachMarker4',
-      position: [2.3, 0.35, 2],
-      targetPos: [2.3, 0.25, 2],
-      lookAt: [3.5, 0.25, 1.5],
-    },
-    {
-      label: 'BeachMarker5',
       position: [3.2, 0.35, 1.8],
       targetPos: [3.2, 0.25, 1.8],
       lookAt: [3.8, 0.23, 1.4],
+    },
+    {
+      label: 'BeachMarker5',
+      position: [-0.4, 0.35, 3.6],
+      targetPos: [-0.4, 0.25, 3.6],
+      lookAt: [-0.1, 0.25, 3.2],
     },
   ],
 };

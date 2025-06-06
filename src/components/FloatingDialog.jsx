@@ -1,94 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { Html } from '@react-three/drei';
-
-// export default function FloatingDialog({ position = [0, 0, 0], texts = "", t = "l", extra = "no" }) {
-//   const [displayedText, setDisplayedText] = useState('');
-
-//   useEffect(() => {
-//     setDisplayedText('');
-//     const interval = setInterval(() => {
-//       setDisplayedText((prev) => {
-//         if (prev.length >= texts.length) {
-//           clearInterval(interval);
-//           return prev;
-//         }
-//         return prev + texts.charAt(prev.length);
-//       });
-//     }, 50);
-//     return () => clearInterval(interval);
-//   }, [texts]);
-
-//   const style = {
-//     minWidth: '250px',
-//     minHeight: '100px',
-//     padding: '20px',
-//     backgroundColor: 'rgba(241, 232, 232, 0.3)',
-//     border: "1px solid black",
-//     color: 'black',
-//     fontFamily: 'monospace, monospace',
-//     fontWeight: 'bold',
-//     fontSize: '14px',
-//     borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-//     textAlign: 'center',
-//     userSelect: 'none',
-//     whiteSpace: 'pre-wrap',
-//     position: 'relative',
-//     filter: 'drop-shadow(0px 3px 6px rgba(0,0,0,0.7))',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   };
-
-//   const bubbleTailStyleBase = {
-//     content: '""',
-//     position: 'absolute',
-//     backgroundColor: 'rgba(147, 138, 138, 0.3)',
-//     border: "1px solid black",
-//     borderRadius: '50%',
-//     filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.2))',
-//   };
-
-//   const isLeft = t === 'l';
-
-//   const baseBubbles = [
-//     { width: 20, height: 20, bottom: -15, offset: '10%' },
-//     { width: 15, height: 15, bottom: -35, offset: '5%' },
-//   ];
-
-//   const extraBubbles = [
-//     { width: 12, height: 12, bottom: -49, offset: '-3%' },
-//     { width: 10, height: 10, bottom: -50, offset: '-12%' },
-//     { width: 8, height: 8, bottom: -45, offset: '-22%' },
-//   ];
-
-//   const renderBubbles = (bubbles) =>
-//     bubbles.map((b, i) => (
-//       <div
-//         key={i}
-//         style={{
-//           ...bubbleTailStyleBase,
-//           width: `${b.width}px`,
-//           height: `${b.height}px`,
-//           bottom: `${b.bottom}px`,
-//           [isLeft ? 'left' : 'right']: b.offset,
-//         }}
-//       />
-//     ));
-
-//   return (
-//     <group position={position}>
-//       <Html center>
-//         <div style={style}>
-//           {displayedText}
-//           {renderBubbles(baseBubbles)}
-//           {extra === 'yes' && renderBubbles(extraBubbles)}
-//         </div>
-//       </Html>
-//     </group>
-//   );
-// }
-
-
 import React, { useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 
@@ -175,8 +84,8 @@ export default function FloatingDialog({ position = [0, 0, 0], texts = "", t = "
 
   const extraBubbles = [
     { width: 12, height: 12, bottom: -49, offset: '-3%' },
-    { width: 10, height: 10, bottom: -50, offset: '-12%' },
-    { width: 8, height: 8, bottom: -45, offset: '-22%' },
+    { width: 10, height: 10, bottom: -48, offset: '-13%' },
+    { width: 8, height: 8, bottom: -38, offset: '-22%' },
   ];
 
   const renderBubbles = (bubbles) =>
