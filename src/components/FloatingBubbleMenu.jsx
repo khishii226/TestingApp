@@ -569,7 +569,7 @@ Excellent planning, organisational, and time management skills.`,
 {selected === "Vision" && (
                 <>
                 <div style={{display: "flex", alignItems: "cenetr", justifyContent: "center"}}>
-                    <img src="./vision.png" style={{height:"5vh", marginRight: '10px', marginTop: '12px'}}/>
+                    <img src="./vision.png" style={{height:"5vh", marginRight: '10px', marginTop: '14px'}}/>
                     <h2><u>OUR VISION</u></h2>
                 </div>
               

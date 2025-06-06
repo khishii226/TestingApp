@@ -404,7 +404,7 @@ const cleanupMemory = () => {
             </>
           )}
           {showBeach2Dialog && (
-            <FloatingDialog position={[2.5, 0.33, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="l"/>
+            <FloatingDialog position={[2.5, 0.27, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="l"/>
           )}
           {showBeach3Dialog && (
             <>
