@@ -398,18 +398,18 @@ const cleanupMemory = () => {
 
           {showBeachDialog && (
             <>
-            <FloatingDialog position={[0.54, 0.2, 3.18]} texts="GHARSEE handles the hustle so we can build sandcastles instead of schedules" active t="r" />
-            <FloatingDialog position={[0.54, 0.12, 3.09]} texts="GHARSEE magic means my parents stay longer! Our sandcastle has towers AND a treasure chest now!" active t="r" />
-            <FloatingDialog position={[0.54, 0.12, 3.4]} texts="I dig holes, they laugh--GHARSEE made our day extra sandy and silly!" active t="l" />
+            <FloatingDialog position={[0.53, 0.21, 3.17]} texts="GHARSEE handles the hustle so we can build sandcastles instead of schedules" active t="r" />
+            <FloatingDialog position={[0.54, 0.13, 3.08]} texts="GHARSEE magic means my parents stay longer! Our sandcastle has towers AND a treasure chest now!" active t="r" />
+            <FloatingDialog position={[0.54, 0.12, 3.43]} texts="I dig holes, they laugh--GHARSEE made our day extra sandy and silly!" active t="l" />
             </>
           )}
           {showBeach2Dialog && (
-            <FloatingDialog position={[2.5, 0.3, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="l"/>
+            <FloatingDialog position={[2.5, 0.33, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="l"/>
           )}
           {showBeach3Dialog && (
             <>
-            <FloatingDialog position={[3, 0.36, 2.19]} texts="GHARSEE's VR shopping = more sets, serves, and sand-sprints before sunset." active t="r"/>
-            <FloatingDialog position={[3, 0.38, 2.98]} texts="Why waste energy on errands when i spike into joy? Thank you, GHARSEE efficiency!" active t="l"/>
+            <FloatingDialog position={[3, 0.365, 2.15]} texts="GHARSEE's VR shopping = more sets, serves, and sand-sprints before sunset." active t="r"/>
+            <FloatingDialog position={[3, 0.4, 3]} texts="Why waste energy on errands when i spike into joy? Thank you, GHARSEE efficiency!" active t="l"/>
             </>
           )}
           {showBeach4Dialog && (

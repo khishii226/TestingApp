@@ -45,7 +45,7 @@ const BackBtn = ({ currentMarkerPos, setCurrentTarget }) => {
       style={{
         position: 'absolute',
         zIndex: 1000,
-        top: '10vh',
+        top: '12vh',
         right: '2vw',
         padding: '0.5em 1em',
         background: 'transparent',
