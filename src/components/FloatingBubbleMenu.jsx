@@ -781,8 +781,7 @@ Social & smart shopping: Invite friends to join VR tours of stores, crowdsource 
           }
         }
       `}</style>
-
-      
+ 
     </>
   );
 }

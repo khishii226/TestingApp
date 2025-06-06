@@ -76,8 +76,8 @@ function FullscreenHandler() {
       onClick={toggleFullscreen}
       style={{
         position: 'fixed',
-        top: "15%",
-        left: "3%",
+        bottom: "15%",
+        right: "0.5%",
         color: 'white',
         transform: 'translateX(-50%)',
         zIndex: 9999,
