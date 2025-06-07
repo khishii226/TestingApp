@@ -37,8 +37,8 @@ const markerTargets = {
     },
     {
       label: 'OfficeMarker2',
-      position: [2.2, 0.55, 0.15],
-      targetPos: [2.2, 0.45, 0.17],
+      position: [2.23, 0.55, 0.18],
+      targetPos: [2.23, 0.45, 0.18],
       lookAt: [2, 0.35, 0.04],
     },
     {
@@ -49,7 +49,7 @@ const markerTargets = {
     },
      {
       label: 'OfficeMarker4',
-      position: [0.78, 0.6, -1.7],
+      position: [0.78, 0.4, -1.7],
       targetPos: [0.78, 0.25, -1.7],
       lookAt: [1.9, 0.3, -1.65],
     },

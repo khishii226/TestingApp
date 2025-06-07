@@ -340,8 +340,8 @@ const cleanupMemory = () => {
 
         style={{ zIndex: 0 }}
       >
-      {/* <SceneMarkerWithLine position={[2, 0.41, 2.77]} />
-      <SceneMarkerWithLine position={[2, 0.25, 2.5]} /> */}
+      {/* <SceneMarkerWithLine position={[2.23, 0.55, 0.18]} /> */}
+      {/* <SceneMarkerWithLine position={[2, 0.25, 2.5]} /> */}
 
         <BackgroundManager isDay={isDay} />
         <SkyAndLights isDay={isDay} />
