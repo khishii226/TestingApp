@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BackgroundMusic from "./components/BackgroundMusic";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandArrowsAlt, faCompressArrowsAlt } from '@fortawesome/free-solid-svg-icons';
+import FloatingBubbleMenu from './components/FloatingBubbleMenu';
 
-// 🔒 Orientation lock
 function OrientationLock() {
   const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
 
@@ -76,7 +76,7 @@ function FullscreenHandler() {
       onClick={toggleFullscreen}
       style={{
         position: 'fixed',
-        bottom: "15%",
+        bottom: "20%",
         right: "0.5%",
         color: 'white',
         transform: 'translateX(-50%)',
@@ -88,9 +88,6 @@ function FullscreenHandler() {
         fontSize: '1rem',
       }}
     >
-      {/* {isFullscreen ? '🔽' : '🔼'} */}
-      {/* {isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'} */}
-
       <FontAwesomeIcon icon={isFullscreen ? faCompressArrowsAlt : faExpandArrowsAlt} size="lg" />
     </button>
   );
@@ -102,6 +99,7 @@ function App() {
     <Router>
       <BackgroundMusic />
       <OrientationLock />
+      <FloatingBubbleMenu />
       <FullscreenHandler />
       <Routes>
         <Route path="/" element={<PortalViewer />} />

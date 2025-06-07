@@ -81,12 +81,12 @@ const markerTargets = {
       label: 'BeachMarker1',
       position: [0.2, 0.42, 3.2],
       targetPos: [0.2, 0.31, 3.2],
-      lookAt: [0.5, 0.1, 3.2],
+      lookAt: [0.5, 0.17, 3.2],
     },
     {
       label: 'BeachMarker2',
-      position: [1.5, 0.41, 2.67],
-      targetPos: [1.5, 0.25, 2.67],
+      position: [2, 0.41, 2.77],
+      targetPos: [2, 0.25, 2.77],
       lookAt: [2, 0.25, 2.5],
     },
     {

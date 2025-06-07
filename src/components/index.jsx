@@ -18,7 +18,6 @@ import ToggleButton from './ToggleButton';
 import BackgroundManager from './BackgroundManager';
 import SkyAndLights from './SkyAndLights';
 import BackBtn from './Back';
-import FloatingBubbleMenu from './FloatingBubbleMenu';
 import Loader from './Loader';
 import FloatingDialog from './FloatingDialog';
 import Logo from './Logo';
@@ -84,7 +83,7 @@ const cleanupMemory = () => {
     const officePos = [1.9, 0.35, -0.5];
     const spPos = [-2.4, 0.42, -1.8];
     const wPos = [-0.5, 0.42, -1.9];
-    const beach2Pos = [1.5, 0.41, 2.67];
+    const beach2Pos = [2, 0.41, 2.77];
     const beach3Pos = [2.3, 0.35, 2];
     const house1Pos = [-1.62, 0.4, 1.3];
     const house2Pos = [-1.4, 0.3, 0.9];
@@ -187,7 +186,7 @@ const cleanupMemory = () => {
       currentAudioRef.current = audio;
     };
 
-    if (pos.every((v, i) => v === [-1.5, 0.42, -2.1][i])) {
+    if (pos.every((v, i) => v === [-1.5, 0.42, -2.1][i]) && isDay) {
       playLoopedAudio('/sceneSounds/sparrow.mp3');
     } else if (pos.every((v, i) => v === [0.2, 0.42, 3.2][i])) {
       playLoopedAudio('/sceneSounds/beach.mp3');
@@ -328,7 +327,7 @@ const cleanupMemory = () => {
         }}
       />
 
-      <FloatingBubbleMenu />
+      
         
       <Canvas
         key={sceneKey}
@@ -341,8 +340,8 @@ const cleanupMemory = () => {
 
         style={{ zIndex: 0 }}
       >
-      {/* <SceneMarkerWithLine position={[-0.4, 0.42, 3.6]} />
-      <SceneMarkerWithLine position={[-0.1, 0.25, 3.2]} /> */}
+      {/* <SceneMarkerWithLine position={[2, 0.41, 2.77]} />
+      <SceneMarkerWithLine position={[2, 0.25, 2.5]} /> */}
 
         <BackgroundManager isDay={isDay} />
         <SkyAndLights isDay={isDay} />
@@ -398,13 +397,13 @@ const cleanupMemory = () => {
 
           {showBeachDialog && (
             <>
-            <FloatingDialog position={[0.53, 0.21, 3.17]} texts="GHARSEE handles the hustle so we can build sandcastles instead of schedules" active t="r" />
+            <FloatingDialog position={[0.59, 0.21, 3.17]} texts="GHARSEE handles the hustle so we can build sandcastles instead of schedules" active t="r" />
             <FloatingDialog position={[0.54, 0.13, 3.08]} texts="GHARSEE magic means my parents stay longer! Our sandcastle has towers AND a treasure chest now!" active t="r" />
-            <FloatingDialog position={[0.54, 0.12, 3.43]} texts="I dig holes, they laugh--GHARSEE made our day extra sandy and silly!" active t="l" />
+            <FloatingDialog position={[0.53, 0.1, 3.44]} texts="I dig holes, they laugh--GHARSEE made our day extra sandy and silly!" active t="l" />
             </>
           )}
           {showBeach2Dialog && (
-            <FloatingDialog position={[2.5, 0.27, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="l"/>
+            <FloatingDialog position={[1.93, 0.23, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="r"/>
           )}
           {showBeach3Dialog && (
             <>
@@ -413,11 +412,11 @@ const cleanupMemory = () => {
             </>
           )}
           {showBeach4Dialog && (
-             <FloatingDialog position={[-0.21, 0.26, 3.42]} texts="Reclined on a beach chair, not a rush in sight. My GHARSEE did the heavy lighting." active t="l"/>
+             <FloatingDialog position={[-0.21, 0.25, 3]} texts="Reclined on a beach chair, not a rush in sight. My GHARSEE did the heavy lighting." active t="r"/>
           )}
 
           {showOfficeDialog && (
-            <FloatingDialog position={[2.73, 0.47, -0.756]} texts="Efficient convenient shopping by dat, hoddy-hero by night--MY GHARSEE fuels both with zero mall marathons." active t="l" extra='yes'/>
+            <FloatingDialog position={[2.3, 0.45, -0.756]} texts="Efficient convenient shopping by dat, hoddy-hero by night--MY GHARSEE fuels both with zero mall marathons." active t="r"/>
           )}
 
           {showHouse1Dialog && (

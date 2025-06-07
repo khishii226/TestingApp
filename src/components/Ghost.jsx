@@ -23,8 +23,8 @@ export default function Ghost({ onEnterPortal, startAnimation = false }) {
     return () => mediaQuery.removeEventListener('change', handleMediaChange);
   }, []);
 
-  const scale = isSmallScreen ? [0.1, 0.1, 0.1] : [0.2, 0.2, 0.2];
-  const position = isSmallScreen ? [-0.7, 0.7, 0.5] : [-1.2, 1.3, 0.5];
+  const scale = isSmallScreen ? [0.1, 0.1, 0.1] : [0.23, 0.23, 0.23];
+  const position = isSmallScreen ? [-0.7, 0.5, 0.5] : [-1.2, 1.1, 0.5];
 
   useEffect(() => {
     initialYRef.current = position[1];
@@ -53,7 +53,7 @@ export default function Ghost({ onEnterPortal, startAnimation = false }) {
 
     Object.values(actions).forEach((action) => {
       action.reset();
-    action.timeScale = 0.4; // Slow down 
+    action.timeScale = 0.2; // Slow down 
     action.fadeIn(0.5).play();
     });
 

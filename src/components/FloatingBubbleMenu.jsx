@@ -581,8 +581,8 @@ Excellent planning, organisational, and time management skills.`,
                   }}>
                     <p>To redefine the future of shopping by seamlessly blending physical and digital worlds.
 <br/><br/>
-<FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} />
-GHARSEE envisions a global shift in e-commerce where immersive experiences replace passive browsing. By pioneering intuitive 3D interfaces and mobile VR technology, we aim to create a universe where users don’t just "see" products—they explore them in lifelike environments, revolutionizing how humanity shops forever.</p>
+👁️
+GHARSEE envisions a global shift in e-commerce where immersive experiences replace passive browsing. By pioneering intuitive 3D interfaces and mobile VR technology, <b style={{color: '#ffd09b'}}>we aim to create a universe where users don’t just "see" products—they explore them</b> in lifelike environments, revolutionizing how humanity shops forever.</p>
                     
                   </div>
                   <button
@@ -617,13 +617,13 @@ GHARSEE envisions a global shift in e-commerce where immersive experiences repla
                     fontSize: 16,
                     lineHeight: "1.5em",
                   }}>
-                    <p>To elevate how the world shops by bridging imagination and reality through next-gen 3D and VR technology.
+                    <p><b>To elevate how the world shops by bridging imagination and reality through next-gen 3D and VR technology.</b>
 <br/>
-GHARSEE is committed to revolutionizing commerce by creating seamless, enriching shopping journeys that adapt to every user’s lifestyle:
+<b style={{color: "#e69db8"}}>GHARSEE</b> is committed to revolutionizing commerce by creating seamless, enriching shopping journeys that adapt to every user’s lifestyle:
 <br/><br/>
-<FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Next-Gen Access: Whether you’re browsing a product in interactive 3D on your screen or diving into full immersion with a mobile VR headset, GHARSEE ensures cutting-edge technology meets intuitive usability.
-<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} />Empathetic Design: We craft experiences that prioritize human connection—letting shoppers explore virtual showrooms like real stores, interact socially in shared spaces, and personalize purchases through AI-powered insights.
-<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Boundless Discovery: From inspecting hyper-realistic 3D textures on your phone to walking through VR-enabled retail worlds, we transform shopping into an adventure that’s engaging, efficient, and endlessly inspiring.
+📱<b style={{color: "lightblue"}}>Next-Gen Access</b>: Whether you’re browsing a product in interactive 3D on your screen or diving into full immersion <b style={{color: '#ffbd73'}}>with a mobile VR headset</b>, GHARSEE ensures cutting-edge technology meets intuitive usability.
+<br/><br/>🤝<b style={{color: "lightblue"}}>Empathetic Design</b>: We craft <b style={{color: '#ffbd73'}}>experiences that prioritize human connection</b> —letting shoppers explore virtual showrooms like real stores, interact socially in shared spaces, and personalize purchases through AI-powered insights.
+<br/><br/>🌍 <b style={{color: "lightblue"}}>Boundless Discovery</b>: From inspecting hyper-realistic 3D textures on your phone to walking through VR-enabled retail worlds, we <b style={{color: '#ffbd73'}}>transform shopping into an adventure</b> that’s engaging, efficient, and endlessly inspiring.
 </p>
                     
                   </div>
@@ -659,10 +659,10 @@ GHARSEE is committed to revolutionizing commerce by creating seamless, enriching
                     lineHeight: "1.5em",
                   }}>
                     <p>Shopping isn’t just about what you buy—it’s about how it makes you feel.
-<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Dual immersion: Explore products in rich 3D detail on any screen or step inside a VR world with your headset for the ultimate in-store experience from anywhere.
-<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> Feel the product, not the distance: Touchless yet tactile—see fabrics ripple, hear shoes click against virtual floors, or place furniture in your living room’s exact dimensions before buying.
-Social & smart shopping: Invite friends to join VR tours of stores, crowdsource opinions on outfits in real time, or let AI guide you to products that match your style and needs.
-<br/><br/><FaHandPointRight style={{ color: "#F8C471", marginRight: 8 }} /> No learning curve, just wow-factor: Our platform is built for everyone—whether you’re a tech enthusiast craving headsets or someone who prefers classic 3D browsing, GHARSEE meets you where you are.</p>
+<br/><br/>👣<b style={{color: "lightblue"}}>Dual immersion:</b> Explore products in rich 3D detail on any screen or <b style={{color: '#ffbd73'}}>step inside a VR world with your headset</b> for the ultimate in-store experience from anywhere.
+<br/><br/>🤌🏻<b style={{color: "lightblue"}}>Feel the product, not the distance:</b> <b style={{color: '#ffbd73'}}>Touchless yet tactile—see fabrics ripple</b>, hear shoes click against virtual floors, or place furniture in your living room’s exact dimensions before buying.
+<br /><br />🛍️<b style={{color: "lightblue"}}>Social & smart shopping:</b> Invite friends to <b style={{color: '#ffbd73'}}>join VR tours of stores</b>, crowdsource opinions on outfits in real time, or let AI guide you to products that match your style and needs.
+<br/><br/>✨<b style={{color: "lightblue"}}>No learning curve, just wow-factor:</b> Our platform is built for everyone—whether you’re a tech enthusiast craving headsets or someone who prefers classic 3D browsing, <b style={{color: '#ffbd73'}}>GHARSEE meets you where you are.</b></p>
                     
                   </div>
                   <button
