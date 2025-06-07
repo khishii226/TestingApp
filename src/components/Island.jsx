@@ -141,22 +141,7 @@ const Island = forwardRef((props, ref) => {
             toneMapped: false,
           });
 
-        } else if (child.name === 'Text008') {
-          const color1 = new THREE.Color(0x330000); // dark red
-          const color2 = new THREE.Color(0xff0000); // bright red
-
-          child.material = new THREE.MeshStandardMaterial({
-            color: color1.clone(),
-            emissive: color2.clone(),
-            emissiveIntensity: 2,
-            transparent: true,
-            opacity: 1,
-            depthWrite: false,
-          });
-          // blinkRef.current = child;
-          
-        } 
-        
+        }
         else if (child.name === 'Text004') {
           const rainbowMat = createRainbowShaderMaterial();
           rainbowMats.current.push(rainbowMat);

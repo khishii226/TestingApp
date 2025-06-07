@@ -19,7 +19,7 @@ export default function HouseContent({ position = [0, 0, 0], texts = "", tc = ""
     return () => clearInterval(interval);
   }, [texts]);
 
-  // Responsive font size and width
+  // Responsive styles
   useEffect(() => {
     const styleTag = document.createElement("style");
     styleTag.innerHTML = `
@@ -38,24 +38,43 @@ export default function HouseContent({ position = [0, 0, 0], texts = "", tc = ""
         justify-content: center;
       }
 
+      @media (max-width: 1024px) {
+        .dialog-box {
+          width: 280px;
+          height: 110px;
+          font-size: 11px;
+        }
+      }
+
       @media (max-width: 768px) {
         .dialog-box {
+          width: 240px;
+          height: 100px;
           font-size: 10px;
-          width: 260px;
         }
       }
 
       @media (max-width: 480px) {
         .dialog-box {
+          width: 210px;
+          height: 90px;
           font-size: 9px;
-          width: 230px;
         }
       }
 
       @media (orientation: landscape) and (max-height: 500px) {
         .dialog-box {
+          width: 180px;
+          height: 80px;
           font-size: 8px;
-          width: 200px;
+        }
+      }
+
+      @media (orientation: landscape) and (max-height: 400px) {
+        .dialog-box {
+          width: 160px;
+          height: 70px;
+          font-size: 7.5px;
         }
       }
     `;
