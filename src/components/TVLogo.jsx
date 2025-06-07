@@ -11,21 +11,33 @@ export default function TVLogo() {
         height: auto;
       }
 
+      @media (max-width: 1024px) {
+        .tv-logo {
+          width: 100px;
+        }
+      }
+
       @media (max-width: 768px) {
         .tv-logo {
-          width: 90px;
+          width: 80px;
         }
       }
 
       @media (max-width: 480px) {
         .tv-logo {
-          width: 70px;
+          width: 60px;
         }
       }
 
       @media (orientation: landscape) and (max-height: 500px) {
         .tv-logo {
-          width: 60px;
+          width: 50px;
+        }
+      }
+
+      @media (orientation: landscape) and (max-height: 400px) {
+        .tv-logo {
+          width: 45px;
         }
       }
     `;
