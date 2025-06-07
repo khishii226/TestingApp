@@ -77,7 +77,7 @@ function FullscreenHandler() {
       style={{
         position: 'fixed',
         bottom: "20%",
-        right: "0.5%",
+        right: "0%",
         color: 'white',
         transform: 'translateX(-50%)',
         zIndex: 9999,
