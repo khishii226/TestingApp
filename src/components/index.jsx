@@ -420,12 +420,12 @@ const cleanupMemory = () => {
           )}
 
           {showHouse1Dialog && (
-            <HouseContent position={[-1.5, 0.25, 0.8]} texts="My couch is my command center. Why leave when my GHARSEE brings the mall to my fingertips?" />
+            <HouseContent position={[-1.5, 0.25, 0.8]} texts="My couch is my command center. Why leave when my GHARSEE brings the mall to my fingertips?"  tc="black" />
           )}
           {showHouse2Dialog && (
             <>
             <TVLogo />
-            <HouseContent position={[-1.527, 0.229, 0.7]} texts="Shop with GHARSEE: Where 'Errands' become 'Extra Moments' --all from your favourite spot at home." />
+            <HouseContent position={[-1.527, 0.229, 0.7]} texts="Shop with GHARSEE: Where 'Errands' become 'Extra Moments' --all from your favourite spot at home." tc="white"/>
             </>
           )}
 

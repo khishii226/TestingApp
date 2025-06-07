@@ -45,7 +45,7 @@ const markerTargets = {
       label: 'OfficeMarker3',
       position: [3.1, 0.6, -1.1],
       targetPos: [3, 0.25, -0.97],
-      lookAt: [2.85, 0.2, -0.7],
+      lookAt: [2.85, 0.29, -0.7],
     },
      {
       label: 'OfficeMarker4',

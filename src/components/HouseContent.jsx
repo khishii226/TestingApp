@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Html } from '@react-three/drei';
 
-export default function HouseContent({ position = [0, 0, 0], texts = "" }) {
+export default function HouseContent({ position = [0, 0, 0], texts = "", tc = "" }) {
   const [displayedText, setDisplayedText] = useState('');
 
   // Typing animation
@@ -19,7 +19,7 @@ export default function HouseContent({ position = [0, 0, 0], texts = "" }) {
     return () => clearInterval(interval);
   }, [texts]);
 
-  // Inject fixed-size style
+  // Responsive font size and width
   useEffect(() => {
     const styleTag = document.createElement("style");
     styleTag.innerHTML = `
@@ -29,14 +29,34 @@ export default function HouseContent({ position = [0, 0, 0], texts = "" }) {
         padding: 20px;
         background-color: transparent;
         color: white;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 14px;
+        font-size: 12px;
         text-align: center;
         user-select: none;
         white-space: pre-wrap;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+        .dialog-box {
+          font-size: 10px;
+          width: 260px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .dialog-box {
+          font-size: 9px;
+          width: 230px;
+        }
+      }
+
+      @media (orientation: landscape) and (max-height: 500px) {
+        .dialog-box {
+          font-size: 8px;
+          width: 200px;
+        }
       }
     `;
     document.head.appendChild(styleTag);
@@ -46,7 +66,7 @@ export default function HouseContent({ position = [0, 0, 0], texts = "" }) {
   return (
     <group position={position}>
       <Html center>
-        <div className="dialog-box">{displayedText}</div>
+        <div className="dialog-box" style={{ color: tc }}>{displayedText}</div>
       </Html>
     </group>
   );
