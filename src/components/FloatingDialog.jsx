@@ -26,7 +26,7 @@ export default function FloatingDialog({ position = [0, 0, 0], texts = "", t = "
         min-width: 250px;
         min-height: 100px;
         max-width: 90vw;
-        padding: 20px;
+        padding: 30px;
         background-color: rgba(241, 232, 232, 0.3);
         border: 1px solid black;
         color: black;

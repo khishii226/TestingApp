@@ -57,6 +57,7 @@ export default function IslandScene() {
   const [showOfficeDialog, setShowOfficeDialog] = useState(false);
   const [showHouse1Dialog, setShowHouse1Dialog] = useState(false);
   const [showHouse2Dialog, setShowHouse2Dialog] = useState(false);
+  const [showcafeDialog, setShowcafeDialog] = useState(false);
 
   const towerMarkers = [
   { label: 'House', position: [-1.3, 1.7, 2.15] },
@@ -88,6 +89,7 @@ const cleanupMemory = () => {
     const house1Pos = [-1.62, 0.4, 1.3];
     const house2Pos = [-1.4, 0.3, 0.9];
     const beach4Pos = [-0.4, 0.35, 3.6];
+    const cafePos = [2.23, 0.55, 0.18]
 
     const gardenTimeout = matchPos(currentMarkerPos, gardenPos)
       ? setTimeout(() => setShowGardenDialog(true), 2000)
@@ -117,6 +119,9 @@ const cleanupMemory = () => {
     const wTimeout = matchPos(currentMarkerPos, wPos)
       ? setTimeout(() => setShowWDialog(true), 2000)
       : null;
+    const cafeTimeout = matchPos(currentMarkerPos, cafePos)
+      ? setTimeout(() => setShowcafeDialog(true), 2000)
+      : null;
 
     const house1Timeout = matchPos(currentMarkerPos, house1Pos)
       ? setTimeout(() => setShowHouse1Dialog(true), 2000)
@@ -133,6 +138,7 @@ const cleanupMemory = () => {
     if (!matchPos(currentMarkerPos, officePos)) setShowOfficeDialog(false);
     if (!matchPos(currentMarkerPos, spPos)) setShowSpDialog(false);
     if (!matchPos(currentMarkerPos, wPos)) setShowWDialog(false);
+    if (!matchPos(currentMarkerPos, cafePos)) setShowcafeDialog(false);
     if (!matchPos(currentMarkerPos, house1Pos)) setShowHouse1Dialog(false);
     if (!matchPos(currentMarkerPos, house2Pos)) setShowHouse2Dialog(false);
 
@@ -147,6 +153,7 @@ const cleanupMemory = () => {
       clearTimeout(wTimeout);
       clearTimeout(house1Timeout);
       clearTimeout(house2Timeout);
+      clearTimeout(cafeTimeout);
     };
   }, [currentMarkerPos]);
 
@@ -252,6 +259,7 @@ const cleanupMemory = () => {
     setShowWDialog(false);
     setShowHouse1Dialog(false);
     setShowHouse2Dialog(false);
+    setShowcafeDialog(false);
     setFlyTarget({
       targetPos: [0.1, 3, 1.4],
       lookAt: [-0.7, 1.5, -0.5], // [-0.7, 2.2, -0.5]
@@ -320,15 +328,14 @@ const cleanupMemory = () => {
           setShowWDialog(false);
           setShowHouse1Dialog(false);
           setShowHouse2Dialog(false);
+          setShowcafeDialog(false);
 
           setShowToggleBtn(true);
           currentAudioRef.current?.pause();
           currentAudioRef.current = null;
         }}
       />
-
-      
-        
+     
       <Canvas
         key={sceneKey}
         camera={{ position: [5, 5, 15], fov: 50 }}
@@ -418,9 +425,15 @@ const cleanupMemory = () => {
           {showOfficeDialog && (
             <FloatingDialog position={[2.3, 0.45, -0.756]} texts="Efficient convenient shopping by day, hoddy-hero by night--MY GHARSEE fuels both with zero mall marathons." active t="r"/>
           )}
+          {showcafeDialog && (
+            <>
+            <FloatingDialog position={[1.68, 0.35, 0.04]} texts="GHARSEE delivers my shopping list and extra hours. Ordered gardening supplies at work yesterday—watered plants after sunset, not after a mall meltdown." active t="r"/>
+            <FloatingDialog position={[2.12, 0.42, 0.00001]} texts="Same! Ordered my kid’s science kit on GHARSEE during lunch—stargazed together last night instead of fighting parking lot chaos. Real ROI: time, not just cash." active t="l"/>
+            </>
+          )}
 
           {showHouse1Dialog && (
-            <HouseContent position={[-1.5, 0.24, 0.8]} texts="My couch is my command center. Why leave when my GHARSEE brings the mall to my fingertips?"  tc="black" />
+            <HouseContent position={[-1.5, 0.25, 0.8]} texts="My couch is my command center. Why leave when my GHARSEE brings the mall to my fingertips?"  tc="black" />
           )}
           {showHouse2Dialog && (
             <>
@@ -453,6 +466,7 @@ const cleanupMemory = () => {
               setShowWDialog(false);
               setShowHouse1Dialog(false);
               setShowHouse2Dialog(false);
+              setShowcafeDialog(false);
             }}
           />
         </>

@@ -154,12 +154,24 @@ const Island = forwardRef((props, ref) => {
             depthWrite: false,
           });
           // blinkRef.current = child;
-
-        } else if (child.name === 'Text004') {
+          
+        } 
+        
+        else if (child.name === 'Text004') {
           const rainbowMat = createRainbowShaderMaterial();
           rainbowMats.current.push(rainbowMat);
           child.material = rainbowMat;
 
+        }
+        else if (child.name === 'Text008') {
+                  blinkRef.current = child;
+                  child.material = new THREE.MeshBasicMaterial({ color: 'red', transparent: true });
+        
+        }
+        else if (child.name === 'Text006') {
+                  blinkRef.current = child;
+                  child.material = new THREE.MeshBasicMaterial({ color: '#ff1d78', transparent:true}); // #ba5e8c , #efbf04 , #ff1dce
+        
         } else {
           const glassNames = [
             'Sphere003', 'FullWindow', 'Sphere002', 'Sphere005',

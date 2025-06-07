@@ -157,7 +157,7 @@ const Island = forwardRef((props, ref) => {
         }
         else if (child.name === 'Text006') {
           blinkRef.current = child;
-          child.material = new THREE.MeshBasicMaterial({ color: '#ff1d78'}); // #ba5e8c , #efbf04 , #ff1dce
+          child.material = new THREE.MeshBasicMaterial({ color: '#ff1d78', transparent: true}); // #ba5e8c , #efbf04 , #ff1dce
 
         } else if (child.name === 'Text004') {
           const rainbowMat = createRainbowShaderMaterial();
