@@ -427,8 +427,8 @@ const cleanupMemory = () => {
           )}
           {showcafeDialog && (
             <>
-            <FloatingDialog position={[1.68, 0.35, 0.04]} texts="GHARSEE delivers my shopping list and extra hours. Ordered gardening supplies at work yesterday—watered plants after sunset, not after a mall meltdown." active t="r"/>
-            <FloatingDialog position={[2.12, 0.42, 0.00001]} texts="Same! Ordered my kid’s science kit on GHARSEE during lunch—stargazed together last night instead of fighting parking lot chaos. Real ROI: time, not just cash." active t="l"/>
+            <FloatingDialog position={[1.6, 0.37, 0.04]} texts="GHARSEE delivers my shopping list and extra hours. Ordered gardening supplies at work yesterday—watered plants after sunset, not after a mall meltdown." active t="r"/>
+            <FloatingDialog position={[2.135, 0.42, 0.00001]} texts="Same! Ordered my kid’s science kit on GHARSEE during lunch—stargazed together last night instead of fighting parking lot chaos. Real ROI: time, not just cash." active t="l"/>
             </>
           )}
 
