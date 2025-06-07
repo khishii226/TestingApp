@@ -178,7 +178,7 @@ const Island = forwardRef((props, ref) => {
             'Cube004',
             'Cube005',
             'Cube006',
-            'Wall_plain002',
+            // 'Wall_plain002',
           ];
           if (glassNames.includes(child.name)) {
             child.material = new THREE.MeshPhysicalMaterial({

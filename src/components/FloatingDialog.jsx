@@ -32,7 +32,7 @@ export default function FloatingDialog({ position = [0, 0, 0], texts = "", t = "
         color: black;
         font-family: monospace, monospace;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 12px;
         border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
         text-align: center;
         user-select: none;
