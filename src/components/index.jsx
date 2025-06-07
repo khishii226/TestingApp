@@ -410,12 +410,12 @@ const cleanupMemory = () => {
             </>
           )}
           {showBeach2Dialog && (
-            <FloatingDialog position={[1.93, 0.23, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled" active t="r"/>
+            <FloatingDialog position={[1.93, 0.23, 2.5]} texts="The waves whisper relaxation. MY GHARSEE whisper, 'Your groceries are handled'" active t="r"/>
           )}
           {showBeach3Dialog && (
             <>
             <FloatingDialog position={[3, 0.365, 2.15]} texts="GHARSEE's VR shopping = more sets, serves, and sand-sprints before sunset." active t="r"/>
-            <FloatingDialog position={[3, 0.4, 3]} texts="Why waste energy on errands when i spike into joy? Thank you, GHARSEE efficiency!" active t="l"/>
+            <FloatingDialog position={[3, 0.4, 3]} texts="Why waste energy on errands when i spike into joy? Thank you, GHARSEE!" active t="l"/>
             </>
           )}
           {showBeach4Dialog && (
@@ -428,7 +428,7 @@ const cleanupMemory = () => {
           {showcafeDialog && (
             <>
             <FloatingDialog position={[1.6, 0.37, 0.04]} texts="GHARSEE delivers my shopping list and extra hours. Ordered gardening supplies at work yesterday—watered plants after sunset, not after a mall meltdown." active t="r"/>
-            <FloatingDialog position={[2.135, 0.42, 0.00001]} texts="Same! Ordered my kid’s science kit on GHARSEE during lunch—stargazed together last night instead of fighting parking lot chaos. Real ROI: time, not just cash." active t="l"/>
+            <FloatingDialog position={[2, 0.42, 0.01]} texts="Same! Ordered my kid’s science kit on GHARSEE during lunch—stargazed together last night instead of fighting parking lot chaos. Real ROI: time, not just cash." active t="r"/>
             </>
           )}
 
