@@ -416,7 +416,7 @@ const cleanupMemory = () => {
           )}
 
           {showOfficeDialog && (
-            <FloatingDialog position={[2.3, 0.45, -0.756]} texts="Efficient convenient shopping by dat, hoddy-hero by night--MY GHARSEE fuels both with zero mall marathons." active t="r"/>
+            <FloatingDialog position={[2.3, 0.45, -0.756]} texts="Efficient convenient shopping by day, hoddy-hero by night--MY GHARSEE fuels both with zero mall marathons." active t="r"/>
           )}
 
           {showHouse1Dialog && (
