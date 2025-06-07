@@ -7,7 +7,7 @@ export default function Ghost({ onEnterPortal, startAnimation = false }) {
   const ghostRef = useRef();
   const initialYRef = useRef(null);
   const calledPortalEnterRef = useRef(false);
-  const { scene, animations } = useGLTF('/ff17.glb');
+  const { scene, animations } = useGLTF('/wi2.glb');
   const { actions } = useAnimations(animations, ghostRef);
 
   const [start, setStart] = useState(false);
